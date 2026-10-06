@@ -1,0 +1,39 @@
+{%- if section.settings.show_announcement -%}
+  <div class="announcement-bar bg-stone-900 text-stone-200 text-xs py-2 px-4 text-center tracking-wider uppercase font-medium border-b border-stone-800 transition-colors">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3">
+      {%- if section.settings.link != blank -%}
+        <a href="{{ section.settings.link }}" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+          <span>{{ section.settings.text | escape }}</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      {%- else -%}
+        <span>{{ section.settings.text | escape }}</span>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "FREE SHIPPING ON ORDERS $35+ · SMALL FIXES FOR EVERYDAY HOME ANNOYANCES"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Announcement Link"
+    }
+  ]
+}
+{% endschema %}

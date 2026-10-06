@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main_product": {
+      "type": "main-product",
+      "settings": {
+        "show_stock_counter": true,
+        "show_sticky_atc": true,
+        "show_share_buttons": true,
+        "free_shipping_notice": "Eligible for Free Insured Express Delivery"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Complete Your Restorative Protocol",
+        "products_to_show": 3
+      }
+    },
+    "trust_badges": {
+      "type": "trust-badges",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_product",
+    "recommendations",
+    "trust_badges"
+  ]
+}

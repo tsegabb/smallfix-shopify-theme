@@ -1,0 +1,82 @@
+<footer class="bg-stone-100/80 text-stone-700 text-sm border-t border-stone-200/80 pt-16 pb-12 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Main Footer Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
+      
+      <!-- Brand & Tagline -->
+      <div class="md:col-span-5 space-y-3">
+        <a href="{{ routes.root_url }}" class="inline-flex items-center gap-2 text-xl font-bold tracking-tight text-stone-900">
+          <span class="text-orange-500 text-lg leading-none select-none">◆</span>
+          <span>{{ section.settings.brand_name | default: 'Smallfix' }}</span>
+        </a>
+        <p class="text-stone-500 text-sm max-w-sm">
+          {{ section.settings.tagline | default: 'Small fixes for everyday home annoyances.' }}
+        </p>
+      </div>
+
+      <!-- SHOP -->
+      <div class="md:col-span-2 space-y-3">
+        <div class="text-xs font-semibold uppercase tracking-wider text-stone-900">SHOP</div>
+        <ul class="space-y-2 text-xs text-stone-600">
+          <li><a href="/collections/cleaning" class="hover:text-stone-900 transition-colors">Cleaning</a></li>
+          <li><a href="/collections/power-cords" class="hover:text-stone-900 transition-colors">Power & cords</a></li>
+          <li><a href="/collections/organize" class="hover:text-stone-900 transition-colors">Organize</a></li>
+          <li><a href="/collections/kitchen" class="hover:text-stone-900 transition-colors">Kitchen</a></li>
+        </ul>
+      </div>
+
+      <!-- HELP -->
+      <div class="md:col-span-2 space-y-3">
+        <div class="text-xs font-semibold uppercase tracking-wider text-stone-900">HELP</div>
+        <ul class="space-y-2 text-xs text-stone-600">
+          <li><a href="/policies/shipping-policy" class="hover:text-stone-900 transition-colors">Shipping</a></li>
+          <li><a href="/policies/refund-policy" class="hover:text-stone-900 transition-colors">Returns</a></li>
+          <li><a href="/pages/contact" class="hover:text-stone-900 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- LEGAL -->
+      <div class="md:col-span-3 space-y-3">
+        <div class="text-xs font-semibold uppercase tracking-wider text-stone-900">LEGAL</div>
+        <ul class="space-y-2 text-xs text-stone-600">
+          <li><a href="/policies/privacy-policy" class="hover:text-stone-900 transition-colors">Privacy policy</a></li>
+          <li><a href="/policies/terms-of-service" class="hover:text-stone-900 transition-colors">Terms of service</a></li>
+          <li><a href="/policies/refund-policy" class="hover:text-stone-900 transition-colors">Refund policy</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Sub-Footer Divider -->
+    <div class="border-t border-dashed border-stone-300 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-stone-500">
+      <div>
+        &copy; {{ 'now' | date: '%Y' }} Smallfix Home. Sample catalog: swap in your supplier listings, photos and policies before launch.
+      </div>
+      <div class="font-medium text-stone-700 whitespace-nowrap">
+        Free shipping $35+
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand Name",
+      "default": "Smallfix"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Brand Tagline",
+      "default": "Small fixes for everyday home annoyances."
+    }
+  ]
+}
+{% endschema %}

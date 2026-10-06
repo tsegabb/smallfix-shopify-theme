@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main_cart": {
+      "type": "main-cart",
+      "settings": {
+        "show_notes": true,
+        "show_shipping_calculator": true
+      }
+    }
+  },
+  "order": [
+    "main_cart"
+  ]
+}

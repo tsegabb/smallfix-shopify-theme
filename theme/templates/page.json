@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main_page": {
+      "type": "benefits-features",
+      "settings": {
+        "heading": "Smallfix Home Gadgets",
+        "subheading": "Small fixes for everyday home annoyances."
+      }
+    }
+  },
+  "order": [
+    "main_page"
+  ]
+}

@@ -1,0 +1,76 @@
+<section class="py-16 sm:py-24 bg-stone-100/70 border-t border-stone-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="text-xs uppercase tracking-widest text-orange-600 font-mono mb-2 flex items-center justify-center gap-1.5">
+        <span class="text-orange-500">◆</span>
+        <span>VERIFIED CUSTOMER REVIEWS</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl text-stone-900 font-bold">
+        {{ section.settings.heading | default: 'Tested and Loved by 12,000+ Homeowners' }}
+      </h2>
+      <p class="text-stone-600 mt-2 text-sm sm:text-base">
+        Real feedback from busy homeowners who cut their cleaning time and reclaimed their weekends.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-8 border border-stone-200/80 rounded-lg shadow-2xs flex flex-col justify-between">
+        <div>
+          <div class="text-orange-500 text-sm mb-4">★★★★★</div>
+          <p class="text-stone-700 text-sm leading-relaxed mb-6">
+            "The SpinScrub Pro cleaned 5 years of hard water stain and shower grout in under 20 minutes without me having to kneel down once. My bad back is so grateful."
+          </p>
+        </div>
+        <div class="border-t border-stone-100 pt-4 text-xs">
+          <div class="font-semibold text-stone-900">Sarah Jenkins</div>
+          <div class="text-stone-500">Verified Buyer · Austin, TX</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 border border-stone-200/80 rounded-lg shadow-2xs flex flex-col justify-between">
+        <div>
+          <div class="text-orange-500 text-sm mb-4">★★★★★</div>
+          <p class="text-stone-700 text-sm leading-relaxed mb-6">
+            "MagLock solved the most annoying daily frustration on my nightstand. No more crawling under the bed to fish out my dropped phone charger cord every night."
+          </p>
+        </div>
+        <div class="border-t border-stone-100 pt-4 text-xs">
+          <div class="font-semibold text-stone-900">David Miller</div>
+          <div class="text-stone-500">Verified Buyer · Seattle, WA</div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 border border-stone-200/80 rounded-lg shadow-2xs flex flex-col justify-between">
+        <div>
+          <div class="text-orange-500 text-sm mb-4">★★★★★</div>
+          <p class="text-stone-700 text-sm leading-relaxed mb-6">
+            "Shipped promptly in 2 days and arrived with tracking. The window track cleaner got dust and grime out of sliding door tracks that my vacuum could never reach."
+          </p>
+        </div>
+        <div class="border-t border-stone-100 pt-4 text-xs">
+          <div class="font-semibold text-stone-900">Rachel Torres</div>
+          <div class="text-stone-500">Verified Buyer · Chicago, IL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tested and Loved by 12,000+ Homeowners"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Testimonials"
+    }
+  ]
+}
+{% endschema %}

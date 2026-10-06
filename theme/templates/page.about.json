@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main_about": {
+      "type": "benefits-features",
+      "settings": {
+        "heading": "Small Fixes for Everyday Home Annoyances",
+        "subheading": "We believe you shouldn't have to spend your precious weekends kneeling on bathroom tile or fishing dropped charger cords from behind your desk. Smallfix creates high-torque, ergonomic gadgets that eradicate tedious chores in minutes."
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_about",
+    "faq"
+  ]
+}

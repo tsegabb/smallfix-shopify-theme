@@ -1,0 +1,103 @@
+<section class="relative overflow-hidden bg-stone-900 text-stone-100 min-h-[540px] lg:min-h-[620px] flex items-center">
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 w-full">
+    <div class="max-w-2xl">
+      {%- if section.settings.kicker != blank -%}
+        <div class="text-xs uppercase tracking-widest text-orange-400 font-mono mb-4 flex items-center gap-1.5">
+          <span class="text-orange-500">◆</span>
+          <span>{{ section.settings.kicker }}</span>
+        </div>
+      {%- endif -%}
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight" style="text-wrap: balance;">
+        {{ section.settings.heading | default: 'Small fixes for everyday home annoyances.' }}
+      </h1>
+
+      <p class="text-base sm:text-lg text-stone-300 font-normal leading-relaxed mb-8 max-w-xl">
+        {{ section.settings.subheading | default: 'Smart electric spin scrubbers, magnetic cord organizers, and precision cleaning gadgets designed to cut chore time in half.' }}
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4">
+        {%- if section.settings.primary_button_label != blank -%}
+          <a href="{{ section.settings.primary_button_link | default: '/collections/all' }}" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold text-stone-950 bg-white hover:bg-stone-100 rounded transition-colors duration-150 shadow-sm whitespace-nowrap">
+            {{ section.settings.primary_button_label }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.secondary_button_label != blank -%}
+          <a href="{{ section.settings.secondary_button_link | default: '/pages/about' }}" class="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium text-stone-200 hover:text-white border border-stone-600 hover:border-stone-400 rounded transition-colors duration-150 whitespace-nowrap backdrop-blur-xs">
+            {{ section.settings.secondary_button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <!-- Live Benefit Metric Strip -->
+      <div class="mt-12 pt-8 border-t border-stone-800/80 grid grid-cols-3 gap-6 text-stone-300">
+        <div>
+          <div class="text-xl sm:text-2xl font-bold text-white tabular-nums">420 RPM</div>
+          <div class="text-xs text-stone-400 mt-0.5">High-Torque Scrubbing</div>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl font-bold text-white tabular-nums">70% Faster</div>
+          <div class="text-xs text-stone-400 mt-0.5">Deep Cleaning Time</div>
+        </div>
+        <div>
+          <div class="text-xl sm:text-2xl font-bold text-white tabular-nums">$35+</div>
+          <div class="text-xs text-stone-400 mt-0.5">Free Express Shipping</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker / Eyebrow Text",
+      "default": "VIRAL HOME PROBLEM SOLVERS · FREE SHIPPING $35+"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero Headline",
+      "default": "Small fixes for everyday home annoyances."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading Description",
+      "default": "Smart electric spin scrubbers, magnetic cord organizers, and precision cleaning gadgets designed to cut chore time in half and keep your living spaces spotless."
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Primary Button Label",
+      "default": "Shop Cleaning Gadgets"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "Secondary Button Label",
+      "default": "The Clean Blueprint"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+<div class="cart-item flex gap-4 py-3 border-b border-stone-200/60" data-line-item-key="{{ item.key }}">
+  <!-- Thumbnail -->
+  <div class="w-18 h-18 bg-stone-100 rounded overflow-hidden shrink-0 border border-stone-200">
+    <img src="{{ item.image | image_url: width: 140 }}" alt="{{ item.title }}" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Item Details -->
+  <div class="flex-1 min-w-0 flex flex-col justify-between">
+    <div>
+      <div class="flex justify-between items-start">
+        <h4 class="text-xs font-semibold text-stone-900 truncate pr-2">
+          <a href="{{ item.url }}">{{ item.product.title }}</a>
+        </h4>
+        <span class="text-xs font-semibold text-stone-900 tabular-nums">
+          {{ item.final_line_price | money }}
+        </span>
+      </div>
+      {%- unless item.product.has_only_default_variant -%}
+        <p class="text-[11px] text-stone-500 mt-0.5">{{ item.variant.title }}</p>
+      {%- endunless -%}
+    </div>
+
+    <!-- Quantity & Remove -->
+    <div class="flex items-center justify-between pt-2">
+      <div class="flex items-center border border-stone-200 rounded bg-white text-xs">
+        <button type="button" class="px-2 py-0.5 text-stone-500 hover:text-stone-900" data-qty-change="-1" data-key="{{ item.key }}">&minus;</button>
+        <span class="px-2 py-0.5 font-medium tabular-nums">{{ item.quantity }}</span>
+        <button type="button" class="px-2 py-0.5 text-stone-500 hover:text-stone-900" data-qty-change="1" data-key="{{ item.key }}">&plus;</button>
+      </div>
+
+      <button type="button" class="text-[11px] text-stone-400 hover:text-rose-600 underline" data-remove-key="{{ item.key }}">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

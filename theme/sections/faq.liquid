@@ -1,0 +1,119 @@
+<section class="py-16 sm:py-24 bg-stone-50 border-t border-stone-200">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="text-xs uppercase tracking-widest text-orange-600 font-mono mb-2 flex items-center justify-center gap-1.5">
+        <span class="text-orange-500">◆</span>
+        <span>HELP & ANSWERS</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-bold text-stone-900">
+        {{ section.settings.heading | default: 'Frequently Asked Questions' }}
+      </h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="text-stone-600 mt-2 text-sm sm:text-base">
+          {{ section.settings.subheading }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="divide-y divide-stone-200 border-y border-stone-200">
+      
+      <!-- FAQ 1 -->
+      <details class="group py-5" open>
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>How long does shipping take and how do I track my order?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          All orders leave our fulfillment center within 2 business days. Standard tracked delivery takes 7 to 14 business days. You will receive an automated dispatch notification email with your direct tracking link as soon as your package ships.
+        </div>
+      </details>
+
+      <!-- FAQ 2 -->
+      <details class="group py-5" open>
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>Which payment cards and checkout methods do you accept?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          We securely accept all major credit and debit cards including Visa, Mastercard, American Express, and Discover. We also support accelerated digital wallets including Shop Pay, Apple Pay, and Google Pay. All transactions are encrypted via 256-bit SSL certified Shopify payment gateways.
+        </div>
+      </details>
+
+      <!-- FAQ 3 -->
+      <details class="group py-5">
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>How do I qualify for Free Shipping?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          All orders containing $35 or more automatically unlock 100% Free Tracked Express Shipping worldwide. No coupon code is required; the discount applies instantly at checkout.
+        </div>
+      </details>
+
+      <!-- FAQ 4 -->
+      <details class="group py-5">
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>Is the SpinScrub Pro waterproof and safe to use in wet showers?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          Yes! The SpinScrub Pro motor head is IPX7 waterproof certified, meaning it can be safely used in running showers, full bathtubs, and wet kitchen sinks without risk of electrical damage.
+        </div>
+      </details>
+
+      <!-- FAQ 5 -->
+      <details class="group py-5">
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>What is your 30-Day Clean Guarantee and return policy?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          We stand behind every gadget with our 30-Day Money-Back Guarantee. If any Smallfix gadget doesn’t drastically cut your cleaning time or simplify your home, simply email support with your order number within 30 days of delivery for a hassle-free return and full refund.
+        </div>
+      </details>
+
+      <!-- FAQ 6 -->
+      <details class="group py-5">
+        <summary class="flex justify-between items-center cursor-pointer text-base sm:text-lg font-semibold text-stone-900 list-none">
+          <span>Will the MagLock cable dock damage my wooden furniture or desk surface?</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 group-open:hidden">+</span>
+          <span class="text-orange-500 font-bold text-xl transition-transform leading-none shrink-0 hidden group-open:inline">&minus;</span>
+        </summary>
+        <div class="pt-3 text-stone-600 text-sm sm:text-base leading-relaxed pr-6">
+          Not at all. The MagLock base features an ultra-soft non-marking silicone pad combined with washable micro-suction technology that grips firmly to wood, marble, glass, and metal without leaving any sticky residue or scratches.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Everything you need to know about Smallfix orders, shipping times, and returns."
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Accordion"
+    }
+  ]
+}
+{% endschema %}

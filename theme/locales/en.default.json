@@ -1,0 +1,30 @@
+{
+  "general": {
+    "search": {
+      "placeholder": "Search spin scrubbers, cable organizers, crevice cleaners...",
+      "results_title": "Search Results",
+      "no_results": "No home gadgets found matching your search."
+    },
+    "cart": {
+      "title": "Your Smallfix Bag",
+      "empty": "Your cart is currently empty",
+      "continue_shopping": "Explore Cleaning Gadgets",
+      "subtotal": "Subtotal",
+      "checkout": "Proceed to Secure Checkout",
+      "note": "Special delivery instructions or order notes",
+      "free_shipping_reached": "You have unlocked Free Tracked Delivery!",
+      "free_shipping_remaining": "Add {{ amount }} more to unlock Free Express Delivery ($35+)"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out — Restocking Soon",
+      "buy_now": "Instant Express Checkout",
+      "in_stock": "In Stock — Dispatches within 24 hours",
+      "low_stock": "Low Stock: Few units remaining in Batch 06",
+      "frequently_bought_together": "Frequently Paired Problem Solvers",
+      "reviews": "Verified Customer Reviews"
+    }
+  }
+}

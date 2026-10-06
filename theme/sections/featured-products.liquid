@@ -1,0 +1,127 @@
+<section class="py-16 sm:py-24 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <div class="text-xs uppercase tracking-widest text-orange-600 font-mono mb-2 flex items-center gap-1.5">
+          <span class="text-orange-500">◆</span>
+          <span>CHORE ELIMINATION CATALOG</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900">
+          {{ section.settings.title | default: 'Problem-Solving Home Gadgets' }}
+        </h2>
+        {%- if section.settings.subtitle != blank -%}
+          <p class="text-stone-600 mt-2 max-w-xl text-sm sm:text-base">
+            {{ section.settings.subtitle }}
+          </p>
+        {%- endif -%}
+      </div>
+      <div class="mt-4 md:mt-0">
+        <a href="/collections/all" class="text-sm font-semibold text-stone-900 hover:text-stone-600 inline-flex items-center gap-1 group">
+          <span>Explore All Gadgets</span>
+          <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Product Grid (4-column responsive) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {%- assign collection = collections[section.settings.collection] -%}
+      {%- for product in collection.products limit: section.settings.products_to_show -%}
+        {% render 'product-card', product: product %}
+      {%- else -%}
+        <!-- Fallback Demo Hardware Cards -->
+        <div class="bg-white border border-stone-200/80 rounded p-4 flex flex-col justify-between">
+          <div>
+            <div class="aspect-4/3 bg-stone-100 rounded mb-3 flex items-center justify-center text-stone-400 text-xs">
+              SpinScrub Pro 8-in-1
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-orange-100 text-orange-800 px-1.5 py-0.5 rounded font-bold">Best Seller</span>
+            <h3 class="text-sm font-bold text-stone-900 mt-2">SpinScrub Pro 8-in-1 Cordless Scrubber</h3>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="font-bold text-stone-900">$49.00</span>
+            <span class="text-xs text-stone-400 line-through">$75.00</span>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200/80 rounded p-4 flex flex-col justify-between">
+          <div>
+            <div class="aspect-4/3 bg-stone-100 rounded mb-3 flex items-center justify-center text-stone-400 text-xs">
+              MagLock 5-Slot Dock
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-stone-100 text-stone-700 px-1.5 py-0.5 rounded font-bold">Organize</span>
+            <h3 class="text-sm font-bold text-stone-900 mt-2">MagLock 5-Slot Cable Organizer Dock</h3>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="font-bold text-stone-900">$24.00</span>
+            <span class="text-xs text-stone-400 line-through">$36.00</span>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200/80 rounded p-4 flex flex-col justify-between">
+          <div>
+            <div class="aspect-4/3 bg-stone-100 rounded mb-3 flex items-center justify-center text-stone-400 text-xs">
+              Window & Crevice Brush
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-stone-100 text-stone-700 px-1.5 py-0.5 rounded font-bold">Cleaning</span>
+            <h3 class="text-sm font-bold text-stone-900 mt-2">Precision Window Track & Crevice Brush</h3>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="font-bold text-stone-900">$18.00</span>
+            <span class="text-xs text-stone-400 line-through">$28.00</span>
+          </div>
+        </div>
+        <div class="bg-white border border-stone-200/80 rounded p-4 flex flex-col justify-between">
+          <div>
+            <div class="aspect-4/3 bg-stone-100 rounded mb-3 flex items-center justify-center text-stone-400 text-xs">
+              HydroDry Soap Caddy
+            </div>
+            <span class="text-[10px] font-mono uppercase bg-stone-100 text-stone-700 px-1.5 py-0.5 rounded font-bold">Kitchen</span>
+            <h3 class="text-sm font-bold text-stone-900 mt-2">HydroDry Self-Draining Sink Caddy</h3>
+          </div>
+          <div class="mt-3 flex items-center justify-between">
+            <span class="font-bold text-stone-900">$22.00</span>
+            <span class="text-xs text-stone-400 line-through">$32.00</span>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Problem-Solving Home Gadgets"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Tested cleaning and organization gadgets engineered to save you hours of scrubbing and fix daily home annoyances."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "label": "Products to show"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

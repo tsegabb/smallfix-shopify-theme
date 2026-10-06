@@ -1,0 +1,75 @@
+<div id="cart-drawer-modal" class="fixed inset-0 z-50 overflow-hidden pointer-events-none" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+  <!-- Backdrop -->
+  <div class="cart-drawer-backdrop fixed inset-0 bg-stone-950/40 backdrop-blur-xs transition-opacity opacity-0 pointer-events-none duration-300" data-action="close-cart"></div>
+
+  <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 pointer-events-none">
+    <div class="cart-drawer-panel w-screen max-w-md bg-stone-50 border-l border-stone-200 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto flex flex-col">
+      
+      <!-- Drawer Header -->
+      <div class="px-6 py-5 bg-white border-b border-stone-200 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <h2 class="text-base font-bold text-stone-900" id="slide-over-title">Your Smallfix Bag</h2>
+          <span class="cart-total-badge text-xs font-mono bg-stone-100 text-stone-700 px-2 py-0.5 rounded tabular-nums">
+            {{ cart.item_count }} items
+          </span>
+        </div>
+        <button type="button" class="text-stone-400 hover:text-stone-700 p-1 cursor-pointer" data-action="close-cart" aria-label="Close cart">
+          &times;
+        </button>
+      </div>
+
+      <!-- Free Shipping Progress Threshold -->
+      <div class="px-6 py-3 bg-stone-100 border-b border-stone-200">
+        {% render 'free-shipping-bar' %}
+      </div>
+
+      <!-- Cart Items List (Scrollable) -->
+      <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4" id="CartDrawerItems">
+        {%- if cart.item_count > 0 -%}
+          {%- for item in cart.items -%}
+            {% render 'cart-item', item: item %}
+          {%- endfor -%}
+        {%- else -%}
+          <div class="py-12 text-center text-stone-500">
+            <p class="text-sm">Your Smallfix bag is currently empty.</p>
+            <a href="/collections/all" class="mt-4 inline-block text-xs font-semibold text-stone-900 border-b border-stone-900 pb-0.5">
+              Explore Home Gadgets &rarr;
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="px-6 py-5 bg-white border-t border-stone-200 space-y-4">
+        <div class="flex justify-between text-sm text-stone-600">
+          <span>Subtotal</span>
+          <span class="font-bold text-stone-900 tabular-nums" id="CartDrawerSubtotal">{{ cart.total_price | money }}</span>
+        </div>
+        <p class="text-xs text-stone-500">Taxes and shipping calculated at checkout.</p>
+
+        <!-- Native Shopify Checkout Button -->
+        <a href="/checkout" class="w-full flex items-center justify-center px-6 py-3.5 bg-stone-900 hover:bg-stone-850 text-white font-semibold text-sm rounded shadow-sm transition-colors cursor-pointer">
+          Proceed to Secure Checkout
+        </a>
+
+        <!-- Accepted Payment Methods & Security Trust Marks -->
+        <div class="pt-2 flex flex-col items-center gap-2 text-center">
+          {% render 'payment-icons' %}
+          <div class="flex items-center justify-center gap-3 text-[11px] text-stone-500">
+            <span>🔒 256-Bit SSL Encrypted</span>
+            <span>·</span>
+            <span>30-Day Clean Guarantee</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": []
+}
+{% endschema %}

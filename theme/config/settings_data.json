@@ -1,0 +1,36 @@
+{
+  "current": {
+    "color_bg": "#FAFAF9",
+    "color_surface": "#FFFFFF",
+    "color_text": "#1C1917",
+    "color_accent": "#F97316",
+    "free_shipping_threshold": 3500,
+    "enable_cart_drawer": true,
+    "show_inventory_urgency": true,
+    "show_sticky_atc": true,
+    "trust_badge_text": "30-Day Clean Guarantee · Free Tracked Shipping $35+ · 1-Year Hardware Warranty",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "text": "FREE SHIPPING ON ORDERS $35+ · SMALL FIXES FOR EVERYDAY HOME ANNOYANCES",
+          "link": "/collections/all"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_text": "Smallfix",
+          "enable_sticky": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "brand_name": "Smallfix",
+          "tagline": "Small fixes for everyday home annoyances."
+        }
+      }
+    }
+  }
+}

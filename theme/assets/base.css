@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Smallfix - Shopify Online Store 2.0 Base Stylesheet
+   Tailored for High-Converting Home & Cleaning Gadgets Dropshipping
+   ========================================================================== */
+
+:root {
+  --color-bg: #FAFAF9;
+  --color-surface: #FFFFFF;
+  --color-text: #1C1917;
+  --color-accent: #F97316;
+  --color-secondary-accent: #EA580C;
+  --color-border: rgba(0,0,0,0.08);
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1ed;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
+
+/* Accessible Screen Readers */
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  word-wrap: normal !important;
+}
+
+/* Image Aspect Utility */
+.aspect-4\/3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* Smooth Drawer Transitions */
+#cart-drawer-modal.open {
+  pointer-events: auto;
+}
+#cart-drawer-modal.open .cart-drawer-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+#cart-drawer-modal.open .cart-drawer-panel {
+  transform: translateX(0);
+}
+
+/* Sticky Header Backdrop Blur */
+.site-header {
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}

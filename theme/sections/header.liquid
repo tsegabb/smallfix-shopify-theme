@@ -1,0 +1,71 @@
+<header class="site-header sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-200" id="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+    
+    <!-- Zone 1: Single Brand Wordmark with Orange Diamond -->
+    <div class="flex items-center">
+      <a href="{{ routes.root_url }}" class="inline-flex items-center gap-2 text-xl sm:text-2xl font-bold tracking-tight text-stone-900 hover:text-stone-700 transition-colors">
+        <span class="text-orange-500 text-lg sm:text-xl leading-none select-none">◆</span>
+        <span>{{ section.settings.logo_text | default: 'Smallfix' }}</span>
+      </a>
+    </div>
+
+    <!-- Zone 2: Navigation Links -->
+    <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-700">
+      {%- for link in linklists.main-menu.links -%}
+        <a href="{{ link.url }}" class="hover:text-stone-950 transition-colors py-1 border-b border-transparent hover:border-stone-900">
+          {{ link.title }}
+        </a>
+      {%- else -%}
+        <a href="/collections/all" class="hover:text-stone-950 transition-colors py-1">Shop All</a>
+        <a href="/collections/cleaning" class="hover:text-stone-950 transition-colors py-1">Cleaning</a>
+        <a href="/collections/power-cords" class="hover:text-stone-950 transition-colors py-1">Power & cords</a>
+        <a href="/collections/organize" class="hover:text-stone-950 transition-colors py-1">Organize</a>
+        <a href="/collections/kitchen" class="hover:text-stone-950 transition-colors py-1">Kitchen</a>
+        <a href="/collections/best-sellers" class="hover:text-stone-950 transition-colors py-1 font-semibold text-orange-600">Best Sellers</a>
+      {%- endfor -%}
+    </nav>
+
+    <!-- Zone 3: Primary Actions (Search, Free Shipping Badge, Bag) -->
+    <div class="flex items-center space-x-5 text-stone-800">
+      <button type="button" class="search-trigger hover:text-stone-950 p-1.5 transition-colors" aria-label="Open Search" data-action="toggle-search">
+        {% render 'icon', name: 'search', class: 'w-5 h-5' %}
+      </button>
+
+      <a href="/collections/all" class="hidden sm:inline-flex items-center text-xs font-semibold px-2.5 py-1 bg-orange-50 border border-orange-200 text-orange-700 rounded">
+        Free shipping $35+
+      </a>
+
+      <button type="button" class="cart-trigger relative hover:text-stone-950 p-1.5 transition-colors" aria-label="Shopping Bag" data-action="toggle-cart">
+        {% render 'icon', name: 'bag', class: 'w-5 h-5' %}
+        <span class="cart-count-badge absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] font-semibold w-4 h-4 rounded-full flex items-center justify-center tabular-nums">
+          {{ cart.item_count }}
+        </span>
+      </button>
+
+      <!-- Mobile Menu Toggle -->
+      <button type="button" class="md:hidden hover:text-stone-950 p-1.5 transition-colors" aria-label="Open Menu" data-action="toggle-mobile-menu">
+        {% render 'icon', name: 'menu', class: 'w-6 h-6' %}
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Brand Logo Text",
+      "default": "Smallfix"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable Sticky Header",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "contact_form": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Contact Smallfix Support",
+        "subheading": "Have questions regarding gadget compatibility, order tracking, or returns? Reach our team directly at support@smallfixhome.com"
+      }
+    }
+  },
+  "order": [
+    "contact_form"
+  ]
+}

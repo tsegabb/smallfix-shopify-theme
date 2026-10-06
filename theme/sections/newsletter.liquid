@@ -1,0 +1,47 @@
+<section class="py-16 sm:py-20 bg-stone-900 text-stone-100 border-t border-stone-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="text-xs uppercase tracking-widest text-orange-400 font-mono mb-2">Exclusive VIP Offers</div>
+    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+      {{ section.settings.heading | default: 'Get $10 Off Your First Smallfix Order' }}
+    </h2>
+    <p class="text-stone-300 text-sm max-w-xl mx-auto mb-8">
+      {{ section.settings.subheading | default: 'Join 25,000+ homeowners receiving our weekly chore-saving gadget drops, cleaning hacks, and private restock discounts.' }}
+    </p>
+
+    {%- form 'customer', class: 'max-w-md mx-auto' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input type="email" name="contact[email]" placeholder="Enter your email address" required class="flex-1 px-4 py-3 bg-stone-800 border border-stone-700 text-white placeholder-stone-400 text-sm rounded focus:outline-hidden focus:border-stone-400">
+        <button type="submit" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold rounded transition-colors whitespace-nowrap">
+          Claim $10 Off
+        </button>
+      </div>
+      <p class="text-[11px] text-stone-400 mt-3">We respect your privacy. No spam. Unsubscribe anytime with 1 click.</p>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get $10 Off Your First Smallfix Order"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Join 25,000+ homeowners receiving our weekly chore-saving gadget drops, cleaning hacks, and private restock discounts."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

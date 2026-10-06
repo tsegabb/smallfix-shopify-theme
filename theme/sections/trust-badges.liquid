@@ -1,0 +1,106 @@
+<section class="border-b border-stone-200/80 bg-stone-100/60 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-stone-800">
+      <div class="flex items-start space-x-3">
+        <div class="text-orange-600 shrink-0 mt-0.5">
+          {% render 'icon', name: 'shield', class: 'w-5 h-5' %}
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-900">{{ section.settings.badge_1_title | default: '30-Day Clean Guarantee' }}</h4>
+          <p class="text-xs text-stone-600 mt-0.5">{{ section.settings.badge_1_desc | default: 'Love your chore-free home or return within 30 days for 100% refund.' }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <div class="text-orange-600 shrink-0 mt-0.5">
+          {% render 'icon', name: 'truck', class: 'w-5 h-5' %}
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-900">{{ section.settings.badge_2_title | default: 'Fast 2-Day Dispatch' }}</h4>
+          <p class="text-xs text-stone-600 mt-0.5">{{ section.settings.badge_2_desc | default: 'Quick warehouse fulfillment with direct package tracking links.' }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <div class="text-orange-600 shrink-0 mt-0.5">
+          {% render 'icon', name: 'check', class: 'w-5 h-5' %}
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-900">{{ section.settings.badge_3_title | default: 'Free Shipping $35+' }}</h4>
+          <p class="text-xs text-stone-600 mt-0.5">{{ section.settings.badge_3_desc | default: 'Unlocked automatically for all qualifying orders during checkout.' }}</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-3">
+        <div class="text-orange-600 shrink-0 mt-0.5">
+          {% render 'icon', name: 'lock', class: 'w-5 h-5' %}
+        </div>
+        <div>
+          <h4 class="text-xs font-semibold uppercase tracking-wider text-stone-900">{{ section.settings.badge_4_title | default: '1-Year Quality Warranty' }}</h4>
+          <p class="text-xs text-stone-600 mt-0.5">{{ section.settings.badge_4_desc | default: 'Tested high-torque motors, IPX7 waterproof seals, and durable build.' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Badges Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_1_title",
+      "label": "Badge 1 Title",
+      "default": "30-Day Clean Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "badge_1_desc",
+      "label": "Badge 1 Desc",
+      "default": "Love your chore-free home or return within 30 days for 100% refund."
+    },
+    {
+      "type": "text",
+      "id": "badge_2_title",
+      "label": "Badge 2 Title",
+      "default": "Fast 2-Day Dispatch"
+    },
+    {
+      "type": "text",
+      "id": "badge_2_desc",
+      "label": "Badge 2 Desc",
+      "default": "Quick warehouse fulfillment with direct package tracking links."
+    },
+    {
+      "type": "text",
+      "id": "badge_3_title",
+      "label": "Badge 3 Title",
+      "default": "Free Shipping $35+"
+    },
+    {
+      "type": "text",
+      "id": "badge_3_desc",
+      "label": "Badge 3 Desc",
+      "default": "Unlocked automatically for all qualifying orders during checkout."
+    },
+    {
+      "type": "text",
+      "id": "badge_4_title",
+      "label": "Badge 4 Title",
+      "default": "1-Year Quality Warranty"
+    },
+    {
+      "type": "text",
+      "id": "badge_4_desc",
+      "label": "Badge 4 Desc",
+      "default": "Tested high-torque motors, IPX7 waterproof seals, and durable build."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Badges Strip"
+    }
+  ]
+}
+{% endschema %}

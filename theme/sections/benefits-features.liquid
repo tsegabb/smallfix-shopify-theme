@@ -1,0 +1,104 @@
+<section class="py-16 sm:py-24 bg-stone-900 text-stone-100 border-t border-stone-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="text-xs uppercase tracking-widest text-orange-400 font-mono mb-3">Chore Elimination Engineering</div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">
+        {{ section.settings.heading | default: 'Eliminate Back-Breaking Scrubbing & Daily Home Clutter' }}
+      </h2>
+      <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+        {{ section.settings.subheading | default: 'Traditional manual cleaning causes knee strain, sore wrists, and wasted weekends. Smallfix motor-driven gadgets cut scrubbing time by 70% and keep your home effortlessly organized.' }}
+      </p>
+    </div>
+
+    <!-- Quantitative Proof Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-stone-800 pt-12">
+      <div class="p-6">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tabular-nums mb-2">
+          {{ section.settings.metric_1 | default: '70% Faster' }}
+        </div>
+        <p class="text-sm text-stone-300 max-w-xs mx-auto">
+          {{ section.settings.metric_1_label | default: 'Average cleaning time reduction across bathrooms, showers, and kitchen tile' }}
+        </p>
+      </div>
+
+      <div class="p-6 border-y md:border-y-0 md:border-x border-stone-800">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-400 tabular-nums mb-2">
+          {{ section.settings.metric_2 | default: '420 RPM' }}
+        </div>
+        <p class="text-sm text-stone-300 max-w-xs mx-auto">
+          {{ section.settings.metric_2_label | default: 'Dual-speed motorized torque eliminates stubborn limescale without bending or joint strain' }}
+        </p>
+      </div>
+
+      <div class="p-6">
+        <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tabular-nums mb-2">
+          {{ section.settings.metric_3 | default: '30-Day' }}
+        </div>
+        <p class="text-sm text-stone-300 max-w-xs mx-auto">
+          {{ section.settings.metric_3_label | default: 'Risk-free in-home trial backed by our 100% money-back clean guarantee' }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Benefits & Features",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Eliminate Back-Breaking Scrubbing & Daily Home Clutter"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Traditional manual cleaning causes knee strain, sore wrists, and wasted weekends. Smallfix motor-driven gadgets cut scrubbing time by 70% and keep your home effortlessly organized."
+    },
+    {
+      "type": "text",
+      "id": "metric_1",
+      "label": "Metric 1",
+      "default": "70% Faster"
+    },
+    {
+      "type": "text",
+      "id": "metric_1_label",
+      "label": "Metric 1 Label",
+      "default": "Average cleaning time reduction across bathrooms, showers, and kitchen tile"
+    },
+    {
+      "type": "text",
+      "id": "metric_2",
+      "label": "Metric 2",
+      "default": "420 RPM"
+    },
+    {
+      "type": "text",
+      "id": "metric_2_label",
+      "label": "Metric 2 Label",
+      "default": "Dual-speed motorized torque eliminates stubborn limescale without bending or joint strain"
+    },
+    {
+      "type": "text",
+      "id": "metric_3",
+      "label": "Metric 3",
+      "default": "30-Day"
+    },
+    {
+      "type": "text",
+      "id": "metric_3_label",
+      "label": "Metric 3 Label",
+      "default": "Risk-free in-home trial backed by our 100% money-back clean guarantee"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits & Features"
+    }
+  ]
+}
+{% endschema %}

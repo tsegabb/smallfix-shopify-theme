@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "faq_section": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Comprehensive answers regarding our 30-Day Clean Guarantee, tracked shipping times, accepted payment cards, and product specifications."
+      }
+    }
+  },
+  "order": [
+    "faq_section"
+  ]
+}

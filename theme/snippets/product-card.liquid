@@ -1,0 +1,67 @@
+{% comment %}
+  Renders a product card with 65-75% imagery height, clean metadata, and quick add.
+{% endcomment %}
+<div class="product-card group bg-white border border-stone-200/80 rounded overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
+  
+  <!-- Image Container -->
+  <a href="{{ product.url }}" class="relative block aspect-4/3 bg-stone-100 overflow-hidden">
+    {%- if product.featured_image != blank -%}
+      <img 
+        src="{{ product.featured_image | image_url: width: 800 }}" 
+        alt="{{ product.title | escape }}" 
+        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+        loading="lazy"
+      >
+    {%- else -%}
+      <div class="w-full h-full flex items-center justify-center text-stone-400 bg-stone-100 text-xs font-mono">
+        SMALLFIX GADGET
+      </div>
+    {%- endif -%}
+
+    {%- if product.compare_at_price > product.price -%}
+      <span class="absolute top-3 left-3 bg-stone-900 text-stone-100 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded">
+        Save {{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}
+      </span>
+    {%- endif -%}
+
+    <!-- Quick Add Button Overlay on Desktop Hover -->
+    <button 
+      type="button" 
+      class="quick-add-btn absolute bottom-3 right-3 bg-stone-900/90 hover:bg-stone-900 text-white text-xs font-medium px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 shadow-sm flex items-center gap-1.5"
+      data-product-id="{{ product.id }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    >
+      <span>Quick Add</span>
+      <span>+</span>
+    </button>
+  </a>
+
+  <!-- Content / Meta -->
+  <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
+    <div>
+      <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500">
+        {{ product.type | default: 'Home Gadget' }}
+      </div>
+      <h3 class="text-sm font-semibold text-stone-900 mt-1 line-clamp-1 group-hover:text-stone-700 transition-colors">
+        <a href="{{ product.url }}">{{ product.title }}</a>
+      </h3>
+    </div>
+
+    <div class="flex items-center justify-between pt-1 border-t border-stone-100">
+      <div class="flex items-baseline gap-2">
+        <span class="text-sm font-semibold text-stone-900 tabular-nums">
+          {{ product.price | money }}
+        </span>
+        {%- if product.compare_at_price > product.price -%}
+          <span class="text-xs text-stone-400 line-through tabular-nums">
+            {{ product.compare_at_price | money }}
+          </span>
+        {%- endif -%}
+      </div>
+      <span class="text-[11px] text-stone-500">
+        ★ 4.9
+      </span>
+    </div>
+  </div>
+
+</div>

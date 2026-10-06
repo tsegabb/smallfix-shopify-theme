@@ -1,0 +1,61 @@
+<section class="py-12 bg-stone-50 min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Collection Header -->
+    <div class="mb-10 text-center max-w-2xl mx-auto">
+      <div class="text-xs uppercase tracking-widest text-orange-600 font-mono mb-2 flex items-center justify-center gap-1.5">
+        <span class="text-orange-500">◆</span>
+        <span>HOME & CLEANING GADGETS</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-bold text-stone-900">
+        {{ collection.title | default: 'Small Fixes for Everyday Home Annoyances' }}
+      </h1>
+      {%- if collection.description != blank -%}
+        <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+          {{ collection.description }}
+        </p>
+      {%- else -%}
+        <p class="text-stone-600 text-sm mt-3 leading-relaxed">
+          Smart, ergonomic gadgets that eradicate tedious chores, tame cord chaos, and keep your home effortlessly spotless.
+        </p>
+      {%- endif -%}
+    </div>
+
+    <!-- Product Grid -->
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {%- for product in collection.products -%}
+          {% render 'product-card', product: product %}
+        {%- else -%}
+          <div class="col-span-full py-16 text-center bg-white rounded border border-stone-200 p-8">
+            <p class="text-stone-600 text-sm">No gadgets found in this collection.</p>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        <div class="mt-12 flex justify-center">
+          {{ paginate | default_pagination }}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 12,
+      "label": "Products per page"
+    }
+  ]
+}
+{% endschema %}

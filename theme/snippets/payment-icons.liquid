@@ -1,0 +1,21 @@
+{% comment %}
+  Renders payment provider icons supported by Shopify Payments
+{% endcomment %}
+<div class="payment-icons flex flex-wrap items-center justify-center gap-2">
+  {%- if shop.enabled_payment_types != empty -%}
+    {%- for type in shop.enabled_payment_types -%}
+      <span class="payment-icon inline-flex items-center">
+        {{ type | payment_type_svg_tag: class: 'h-6 w-auto' }}
+      </span>
+    {%- endfor -%}
+  {%- else -%}
+    <!-- Default supported payment methods for Smallfix -->
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">VISA</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">MASTERCARD</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">AMEX</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">DISCOVER</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">APPLE PAY</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">GOOGLE PAY</span>
+    <span class="px-2 py-0.5 bg-stone-100 border border-stone-200 rounded text-[10px] font-bold text-stone-700 tracking-wider">SHOP PAY</span>
+  {%- endif -%}
+</div>

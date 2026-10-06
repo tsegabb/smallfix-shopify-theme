@@ -1,0 +1,24 @@
+{% comment %}
+  Calculates and renders a progress bar towards the free express shipping threshold.
+{% endcomment %}
+{%- assign threshold = settings.free_shipping_threshold | default: 3500 -%}
+{%- assign current = cart.total_price -%}
+{%- assign remaining = threshold | minus: current -%}
+{%- assign percentage = current | times: 100.0 | divided_by: threshold | at_most: 100 -%}
+
+<div class="free-shipping-container space-y-1.5" data-threshold="{{ threshold }}">
+  <div class="text-xs text-stone-700 flex justify-between font-medium">
+    {%- if remaining > 0 -%}
+      <span>Add <strong class="tabular-nums font-semibold text-stone-900">{{ remaining | money }}</strong> for Free Express Delivery</span>
+    {%- else -%}
+      <span class="text-emerald-800 font-semibold flex items-center gap-1">
+        <span>✓</span> You unlocked Free Express Tracked Delivery!
+      </span>
+    {%- endif -%}
+    <span class="text-stone-500 tabular-nums text-[11px]">{{ percentage | round }}%</span>
+  </div>
+
+  <div class="w-full bg-stone-200 h-1.5 rounded-full overflow-hidden">
+    <div class="bg-orange-500 h-full transition-all duration-300 ease-out" style="width: {{ percentage }}%;"></div>
+  </div>
+</div>

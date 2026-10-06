@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "heading": "Small fixes for everyday home annoyances.",
+        "subheading": "Smart electric spin scrubbers, magnetic cord organizers, and precision cleaning gadgets designed to cut chore time in half.",
+        "primary_button_label": "Shop Cleaning Gadgets",
+        "primary_button_link": "/collections/all",
+        "secondary_button_label": "Browse Best Sellers",
+        "secondary_button_link": "/collections/best-sellers",
+        "kicker": "VIRAL HOME PROBLEM SOLVERS · FREE SHIPPING ON $35+"
+      }
+    },
+    "trust_badges": {
+      "type": "trust-badges",
+      "settings": {
+        "badge_1_title": "30-Day Clean Guarantee",
+        "badge_1_desc": "Love the time you save, or return your gadgets for a 100% full refund.",
+        "badge_2_title": "Fast 2-Day Dispatch",
+        "badge_2_desc": "Quick warehouse fulfillment with end-to-end tracked delivery.",
+        "badge_3_title": "Free Shipping on $35+",
+        "badge_3_desc": "Automatic free express delivery applied to all qualifying orders at checkout.",
+        "badge_4_title": "1-Year Quality Warranty",
+        "badge_4_desc": "Precision tested brushless motors and heavy-duty water-resistant seals."
+      }
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Chore-Elimination Catalog",
+        "subtitle": "Tested cleaning and organization gadgets engineered to save you hours of scrubbing and fix daily home annoyances.",
+        "collection": "all",
+        "products_to_show": 4
+      }
+    },
+    "benefits_features": {
+      "type": "benefits-features",
+      "settings": {
+        "heading": "Eliminate Back-Breaking Scrubbing & Daily Home Clutter",
+        "subheading": "Traditional manual cleaning causes knee strain, sore wrists, and wasted weekends. Smallfix motor-driven gadgets cut scrubbing time by 70% and keep your home effortlessly organized.",
+        "metric_1": "70% Faster",
+        "metric_1_label": "Average cleaning time reduction across bathrooms, showers, and kitchen tile",
+        "metric_2": "420 RPM",
+        "metric_2_label": "Dual-speed motorized torque eliminates stubborn limescale without bending or joint strain",
+        "metric_3": "30-Day",
+        "metric_3_label": "Risk-free in-home trial backed by our 100% money-back clean guarantee"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "heading": "Tested and Loved by 12,000+ Homeowners"
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "subheading": "Everything you need to know about Smallfix orders, shipping times, payment methods, and returns."
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Get $10 Off Your First Smallfix Order",
+        "subheading": "Join 25,000+ homeowners receiving our weekly chore-saving gadget drops, cleaning hacks, and private restock discounts."
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust_badges",
+    "featured_products",
+    "benefits_features",
+    "testimonials",
+    "faq",
+    "newsletter"
+  ]
+}
